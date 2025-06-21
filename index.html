@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>봇 개발자</title>
+  <style>
+    .below-footer {
+        margin-top: 50px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .below-footer h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 400px;
+        margin: 0 auto;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-card img {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .project-text h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-text p {
+        font-size: 1rem;
+        color: #555;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .intro {
+      font-size: 5rem;
+      animation: wave 2s ease-in-out;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 1s ease;
+    }
+
+    .intro.move-up {
+      transform: translateY(-250px);
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0deg) translateY(-50%); }
+      20% { transform: rotate(15deg) translateY(-50%); }
+      40% { transform: rotate(-10deg) translateY(-50%); }
+      60% { transform: rotate(15deg) translateY(-50%); }
+      80% { transform: rotate(-10deg) translateY(-50%); }
+      100% { transform: rotate(0deg) translateY(-50%); }
+    }
+
+    .container {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      text-align: center;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn {
+      background-color: #5865F2;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 20px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #4752c4;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: #1DB954;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+<div class="intro" id="wave">👋</div>
+
+  <div class="container" id="main">
+      <h1>중딩 개발자, 우빈입니다!</h1>
+      <a href="https://discord.com/oauth2/authorize?client_id=1371843214797176872&scope=bot+applications.commands&permissions=8" target="_blank" class="btn">
+          디스코드 봇 초대하기
+      </a>
+
+      <div class="footer">
+          <p>깃허브 <a href="https://github.com/hanadev-bot" target="_blank">hanadev-bot</a></p>
+          <p>이메일 <a href="mailto:woobin.hana.dev@gmail.com">woobin.hana.dev@gmail.com</a></p>
+          <p class="copyright">© 2025 우빈. All rights reserved.</p>
+      </div>
+
+      <div class="below-footer">
+          <h2>✨ 프로젝트</h2>
+
+          <div class="project-card">
+              <img src="/images/image.jpg" alt="하나 프로젝트 이미지" />
+              <div class="project-text">
+                  <h3>하나 프로젝트</h3>
+                  <p>디스코드 봇 프로젝트입니다.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('wave').classList.add('move-up');
+      document.getElementById('main').classList.add('visible');
+    }, 2000);
+  </script>
+</body>
+</html>
